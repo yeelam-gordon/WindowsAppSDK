@@ -4,7 +4,7 @@
 
   <!-- TEST AUTOINITIALIZER: Copied from WindowsAppSDK-Nuget-Native.AutoInitializer.targets with different WindowsAppRuntimeAutoInitializer file path. -->
 
-  <Target Name="WindowsAppRuntimeAutoInitializer">
+  <Target Name="GenerateWindowsAppRuntimeAutoInitializerCpp">
     <ItemGroup>
       <ClCompile Include="$(RepoRoot)\dev\common\WindowsAppRuntimeAutoInitializer.cpp">
         <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -18,7 +18,7 @@
 
   <PropertyGroup>
     <BeforeClCompileTargets>
-        $(BeforeClCompileTargets); WindowsAppRuntimeAutoInitializer;
+        $(BeforeClCompileTargets); GenerateWindowsAppRuntimeAutoInitializerCpp;
     </BeforeClCompileTargets>
   </PropertyGroup>
 

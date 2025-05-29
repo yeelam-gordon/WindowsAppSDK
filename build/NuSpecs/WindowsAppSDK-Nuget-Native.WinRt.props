@@ -91,6 +91,12 @@
       <Implementation Condition="'$(WindowsAppSDKFrameworkPackage)' != 'true'">$(_FoundationRuntimesFrameworkFolder)\Microsoft.WindowsAppRuntime.dll</Implementation>
       <IsWinMDFile>true</IsWinMDFile>
     </Reference>
+    <Reference Include="Microsoft.Windows.AI.Foundation.winmd"
+      Condition="Exists('$(_FoundationMetadataFolder)\Microsoft.Windows.AI.Foundation.winmd')">
+      <HintPath>$(_FoundationMetadataFolder)\Microsoft.Windows.AI.Foundation.winmd</HintPath>
+      <Implementation Condition="'$(WindowsAppSDKFrameworkPackage)' != 'true'">$(_FoundationRuntimesFrameworkFolder)\Microsoft.WindowsAppRuntime.dll</Implementation>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
   </ItemGroup>
 
 </Project>

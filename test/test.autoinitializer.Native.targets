@@ -4,7 +4,10 @@
 
   <!-- TEST AUTOINITIALIZER: Copied from WindowsAppSDK-Nuget-Native.AutoInitializer.targets with different WindowsAppRuntimeAutoInitializer file path. -->
 
-  <Target Name="WindowsAppRuntimeAutoInitializer">
+  <Target Name="WindowsAppRuntimeAutoInitializer" Condition="'$(WindowsAppRuntimeAutoInitializerExecuted)' != 'true'">
+    <PropertyGroup>
+      <WindowsAppRuntimeAutoInitializerExecuted>true</WindowsAppRuntimeAutoInitializerExecuted>
+    </PropertyGroup>
     <ItemGroup>
       <_ExistingAutoInitializer Include="@(ClCompile->WithMetadataValue('Include', '$(RepoRoot)\dev\common\WindowsAppRuntimeAutoInitializer.cpp'))" />
     </ItemGroup>
